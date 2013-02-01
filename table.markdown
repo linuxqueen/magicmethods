@@ -1,19 +1,18 @@
-#A Guide to Python's Magic Methods#
+#Python的Magic Methods手册#
 
-###Rafe Kettler###
+###Rafe Kettler，翻译：Alex Xiang###
 
 Copyright &copy; 2012 Rafe Kettler
 
 Version 1.17
 
-A PDF version of this guide can be obtained from [my site](http://www.rafekettler.com/magicmethods.pdf) or [Github](https://github.com/RafeKettler/magicmethods/raw/master/magicmethods.pdf). The magic methods guide has [a git repository at http://www.github.com/RafeKettler/magicmethods](http://www.github.com/RafeKettler/magicmethods). Any issues can be reported 
-there, along with comments, (or even contributions!).
+本手册的PDF版本可以到原作者的[网站](http://www.rafekettler.com/magicmethods.pdf) 或者 [Github](https://github.com/RafeKettler/magicmethods/raw/master/magicmethods.pdf)获取。本手册的github仓库在[http://www.github.com/RafeKettler/magicmethods](http://www.github.com/RafeKettler/magicmethods)。如有问题可以在那里报告，也可以评论，甚至提交贡献。
 
-**<a id="table" href="#table">Table of Contents</a>**
+**<a id="table" href="#table">目录</a>**
 
 
- 1. [Introduction](#intro)
- 2. [Construction and Initialization](#construction)
+ 1. [简介](#intro)
+ 2. [构造和初始化](#construction)
  3. [Making Operators Work on Custom Classes](#operators)
     - [Comparison magic methods](#comparisons)
     - [Numeric magic methods](#numeric)
@@ -25,8 +24,8 @@ there, along with comments, (or even contributions!).
  9. [Callable Objects](#callable)
  10. [Context Managers](#context)
  11. [Building Descriptor Objects](#descriptor)
- 12. [Copying](#copying)
+ 12. [复制](#copying)
  13. [Pickling your Objects](#pickling)
- 14. [Conclusion](#conclusion)
- 15. [Appendix 1: How to Call Magic Methods](#appendix1)
- 16. [Appendix 2: Changes in Python 3](#appendix2)
+ 14. [总结](#conclusion)
+ 15. [附录A: 如何调用Magic Method](#appendix1)
+ 16. [附录B: Python 3中的改动](#appendix2)

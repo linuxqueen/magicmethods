@@ -1,19 +1,18 @@
-##<a id="appendix1" href="#appendix1">Appendix 1: How to Call Magic Methods</a>##
+##<a id="appendix1" href="#appendix1">附录A：如何调用Magic Methods</a>##
 
-Some of the magic methods in Python directly map to built-in functions; in this case, how to invoke them is fairly obvious. However, in other 
-cases, the invocation is far less obvious. This appendix is devoted to exposing non-obvious syntax that leads to magic methods getting called.
+Python的magic method有些是直接映射成内置函数，这些方法的调用方式很容易明白。不过，其他方法的调用方式就不那么容易直接了。本附录将着重介绍这些调用的语法。
 
-Magic Method                       |  When it gets invoked (example)        | Explanation
+Magic Method                       |  何时被调用（例子）                    | 说明
 ----------------------             | ----------------------------------     | --------------------------------------------
-`__new__(cls [,...])`              |  `instance = MyClass(arg1, arg2)`      |  `__new__` is called on instance creation
-`__init__(self [,...])`            |  `instance = MyClass(arg1, arg2)`      |  `__init__` is called on instance creation
-`__cmp__(self, other)`             |  `self == other`, `self > other`, etc. |  Called for any comparison
-`__pos__(self)`                    |  `+self`                               |  Unary plus sign
-`__neg__(self)`                    |  `-self`                               |  Unary minus sign
-`__invert__(self)`                 |  `~self`                               |  Bitwise inversion
-`__index__(self)`                  |  `x[self]`                             |  Conversion when object is used as index
-`__nonzero__(self)`                |  `bool(self)`                          |  Boolean value of the object
-`__getattr__(self, name)`          |  `self.name # name doesn't exist`      |  Accessing nonexistent attribute
+`__new__(cls [,...])`              |  `instance = MyClass(arg1, arg2)`      |  实例创建时`__new__`被调用
+`__init__(self [,...])`            |  `instance = MyClass(arg1, arg2)`      |  实例创建时`__init__`被调用
+`__cmp__(self, other)`             |  `self == other`, `self > other`, 等等 |  比较时被调用
+`__pos__(self)`                    |  `+self`                               |  一元加符号
+`__neg__(self)`                    |  `-self`                               |  一元减符号
+`__invert__(self)`                 |  `~self`                               |  按位取反
+`__index__(self)`                  |  `x[self]`                             |  对象用来做索引时进行转换
+`__nonzero__(self)`                |  `bool(self)`                          |  对象转换成bool值
+`__getattr__(self, name)`          |  `self.name` # name不存在              |  访问不存在的属性
 `__setattr__(self, name, val)`     |  `self.name = val`                     |  Assigning to an attribute
 `__delattr__(self, name)`          |  `del self.name`                       |  Deleting an attribute
 `__getattribute__(self, name)`     |  `self.name`                           |  Accessing any attribute

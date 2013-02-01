@@ -1,4 +1,5 @@
-docs: magicmethods.html magicmethods.pdf clean
+#docs: magicmethods.html magicmethods.pdf clean
+docs: magicmethods.html clean
 
 html: magicmethods.html
 

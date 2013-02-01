@@ -1,7 +1,7 @@
 \documentclass[a4paper,11pt]{article}
 
-\title{A Guide to Python's Magic Methods}
-\author{Rafe Kettler}
+\title{Python的Magic Methods指南}
+\author{Rafe Kettler，翻译：Alex Xiang}
 \date{\today}
 
 \usepackage{fullpage}
@@ -20,11 +20,11 @@ showstringspaces = false
 \begin{document}
 \maketitle
 
-\section{Introduction}
+\section{简介}
 
-This guide is the culmination of a few months' worth of blog posts. The subject is \textbf{magic methods}.
+这份指南是几个月来有价值的一些博客文章的汇总，这些文章的主题都是关于\textbf{magic methods}。
 
-What are magic methods? They're everything in object-oriented Python. They're special methods that you can define to add "magic" to your classes. They're always surrounded by double underscores (e.g. \code{__init__} or \code{__lt__}). They're also not as well documented as they need to be. All of the magic methods for Python appear in the same section in the Python docs, but they're scattered about and only loosely organized. There's hardly an example to be found in that section (and that may very well be by design, since they're all detailed in the \emph{language reference}, along with boring syntax descriptions, etc.).
+什么是magic methods？这是面向对象的Python的全部内容。They're everything in object-oriented Python. They're special methods that you can define to add "magic" to your classes. They're always surrounded by double underscores (e.g. \code{__init__} or \code{__lt__}). They're also not as well documented as they need to be. All of the magic methods for Python appear in the same section in the Python docs, but they're scattered about and only loosely organized. There's hardly an example to be found in that section (and that may very well be by design, since they're all detailed in the \emph{language reference}, along with boring syntax descriptions, etc.).
 
 So, to fix what I perceived as a flaw in Python's documentation, I set out to provide some more plain-English, example-driven documentation for Python's magic methods. I started out with weekly blog posts, and now that I've finished with those, I've put together this guide.
 

@@ -1,14 +1,14 @@
-##<a id="intro" href="#intro">Introduction</a>##
+##<a id="intro" href="#intro">简介</a>##
 
-This guide is the culmination of a few months' worth of blog posts. The subject is **magic methods**.
+这份指南是几个月来有价值的一些博客文章的汇总，这些文章的主题都是关于**magic methods**。
 
-What are magic methods? They're everything in object-oriented Python. They're special methods that you can define to add "magic" to your classes. They're always surrounded by double underscores (e.g. `__init__` or `__lt__`). They're also not as well documented as they need to be. All of the magic methods for Python appear in the same section in the Python docs, but they're scattered about and only loosely organized. There's hardly an example to be found in that section (and that may very well be by design, since they're all detailed in the _language reference_, along with boring syntax descriptions, etc.).
+什么是magic methods？它们可以说是Python面向对象的全部。它们是一些特殊的方法，你可以用它们为你的类添加神奇的东西。它们一般前后都是双下划线（例如 `__init__` 或 `__lt__`）。不过它们在文档方面满足不了需要。在Python文档中，所有这些都分散在同一个章节里，并且缺少良好的组织。 在这个章节，几乎找不到一个合适的例子（很可能本来就打算这样，因为在_语言参考_中可以看到这些详细内容，与那些枯燥的语法说明之类的放在一起）。
 
-So, to fix what I perceived as a flaw in Python's documentation, I set out to provide some more plain-English, example-driven documentation for Python's magic methods. I started out with weekly blog posts, and now that I've finished with those, I've put together this guide.
+于是，为了改善我认为的Python文档中的这个缺陷，我打算为Python的magic method写一些更清晰的，基于实例的文档。我开始每周为此写博客，目前已经完成了这些文章，汇总起来就是这份指南。
 
-I hope you enjoy it. Use it as a tutorial, a refresher, or a reference; it's just intended to be a user-friendly guide to Python's magic methods.
+希望你能喜欢这份文档。它可以作为教程、回顾或者参考；总之，希望它能成为一份关于Python的magic methods的用户友好的指南。
 
-##<a id="construction" href="#construction">Construction and Initialization</a>##
+##<a id="construction" href="#construction">构造和初始化</a>##
 
 Everyone knows the most basic magic method, `__init__`. It's the way that we can define the initialization behavior of an object. However, when I call `x = SomeClass()`, `__init__` is not the first thing to get called. Actually, it's a method called `__new__`, which actually creates the instance, then passes any arguments at creation on to the initializer. At the other end of the object's lifespan, there's `__del__`. Let's take a closer look at these 3 magic methods:
 
@@ -771,6 +771,6 @@ Our example is a `Slate`, which remembers what its values have been and when tho
             self.history = state
             self.value, self.last_change = None, None
 
-##<a id="conclusion" href="#conclusion">Conclusion</a>##
+##<a id="conclusion" href="#conclusion">总结</a>##
 
 The goal of this guide is to bring something to anyone that reads it, regardless of their experience with Python or object-oriented programming. If you're just getting started with Python, you've gained valuable knowledge of the basics of writing feature-rich, elegant, and easy-to-use classes. If you're an intermediate Python programmer, you've probably picked up some slick new concepts and strategies and some good ways to reduce the amount of code written by you and clients. If you're an expert Pythonista, you've been refreshed on some of the stuff you might have forgotten about and maybe picked up a few new tricks along the way. Whatever your experience level, I hope that this trip through Python's special methods has been truly magical (I couldn't resist the final pun).
